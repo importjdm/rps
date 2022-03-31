@@ -67,7 +67,7 @@ function computerPlay() {
         }      
     }
 
-    console.log(playround(computerSelection, playerSelection));
+   // console.log(playround(computerSelection, playerSelection));
     
 
 
@@ -77,13 +77,43 @@ function computerPlay() {
     //it has to print out who one each round
     //something has to keep track of each round
     //whoever gets to 5 first wins and prints out on the screen
+    //something to keep score
+    //print out a final message for whoever won
     function game() {
-       // userScore;
-       // pcScore;
+        let tie = 0;
+        let pcScore = 0;
+        let userScore = 0;
         for (let i= 0; i < 5; i++) {
-                console.log(playround(computerPlay(), userSelect()));
+            
+                let answer = playround(computerPlay(), userSelect());
+                 alert(answer);
+                
+                 if (answer == "It's a tie, rock and rock" ) {
+                        tie++
+                 } else if (answer == "You lost, rock beat scissors") {
+                     pcScore++
+                     } else if (answer == "You won, paper beats rock") {
+                        userScore++
+                        } else if (answer == "You lost, paper beats rock") {
+                            pcScore++
+                            } else if (answer == "It's a tie, paper and paper") {
+                                tie++
+                              } else if (answer == "You won, scissors beats paper") {
+                                    userScore++
+                                 } else if (answer == "You won, rock beats scissors") {
+                                        userScore++
+                                    } else if (answer == "You lost, scissors beats paper") {
+                     
+                                        } else if (answer == "It's a tie, scissors and scissors") {
+                                                tie++
+                                             } 
+                                         }
+        if (userScore > pcScore) {
+            console.log("You won the battles and the war!");
+        } if (userScore < pcScore) {
+            console.log("You have lost the battles and the war!");
+        } else {
+            console.log("Somehow its a tie, better luck next time!");
+        }
+   } 
 
-               
-
-    }
-} 
